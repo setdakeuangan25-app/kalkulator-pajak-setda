@@ -76,12 +76,103 @@ img, svg, canvas {
 }
 
 @media print {
-  body {
-    background-color: white !important;
-    color: black !important;
+  @page {
+    size: auto;
+    margin: 10mm 15mm;
   }
-  header, footer, nav {
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+    font-size: 11pt !important;
+  }
+
+  /* Hide everything in the body by default during print */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Hide application shell elements */
+  header, footer, nav, aside, main, .no-print, [aria-hidden="true"], .print\:hidden {
     display: none !important;
+  }
+
+  /* Display ONLY the printable modal document */
+  .printable-document,
+  .printable-document * {
+    visibility: visible !important;
+    display: block;
+  }
+
+  /* Specific display overrides for table and flex children inside printable document */
+  .printable-document table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  .printable-document thead {
+    display: table-header-group !important;
+  }
+
+  .printable-document tbody {
+    display: table-row-group !important;
+  }
+
+  .printable-document tr {
+    display: table-row !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .printable-document th,
+  .printable-document td {
+    display: table-cell !important;
+  }
+
+  .printable-document .grid {
+    display: grid !important;
+  }
+
+  .printable-document .flex {
+    display: flex !important;
+  }
+
+  .printable-document input {
+    display: inline-block !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .printable-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Preserve colors for tables and badges in modern print engines */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }
 

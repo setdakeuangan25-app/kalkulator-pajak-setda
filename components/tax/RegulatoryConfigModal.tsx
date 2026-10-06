@@ -142,10 +142,10 @@ const RegulatoryConfigDialog: React.FC<{
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
-      <div className="bg-white rounded-lg shadow-2xl max-w-3xl w-full border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-md p-3 sm:p-6 md:p-8 flex justify-center items-start">
+      <div className="bg-white rounded-xl shadow-2xl max-w-3xl w-full border border-slate-200 overflow-hidden flex flex-col my-auto sm:my-6 md:my-8 max-h-[90vh] relative">
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 bg-slate-900 text-white shrink-0">
+        <div className="sticky top-0 z-20 flex items-center justify-between px-5 py-3.5 bg-slate-900 text-white shrink-0 border-b border-slate-800 shadow-sm">
           <div className="flex items-center gap-2">
             <Sliders className="w-4 h-4 text-emerald-400" />
             <span className="text-sm font-bold tracking-tight">
@@ -154,7 +154,7 @@ const RegulatoryConfigDialog: React.FC<{
           </div>
           <button
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-white rounded hover:bg-slate-800 transition-colors"
+            className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
