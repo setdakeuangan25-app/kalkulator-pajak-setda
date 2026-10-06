@@ -1,0 +1,6 @@
+{
+  "name": "Kalkulator Pajak Indonesia (PPh 21 TER, UMKM, Badan & PPN)",
+  "description": "Aplikasi kalkulator pajak profesional dan akurat sesuai regulasi perpajakan terbaru di Indonesia (UU HPP, PP 58/2023, PMK 168/2023, PP 55/2022).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
