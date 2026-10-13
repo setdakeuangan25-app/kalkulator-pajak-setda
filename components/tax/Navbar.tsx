@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div className="min-w-0">
             <span className="text-base sm:text-lg font-bold tracking-tight text-slate-900 leading-tight block truncate">
-              Kalkulator Pajak RI
+              Kalkulator Pajak RI by Sekretariat Daerah KOBAR
             </span>
             <span className="text-[10px] text-slate-500 font-medium leading-none block mt-0.5 truncate">
               Simulasi & Perhitungan Pajak Akurat Terintegrasi

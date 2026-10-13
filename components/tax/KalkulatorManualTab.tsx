@@ -41,11 +41,11 @@ export const KalkulatorManualTab: React.FC<KalkulatorManualTabProps> = ({
     return () => window.removeEventListener('tax-config-updated', handleConfigUpdated);
   }, []);
 
-  // 1. Input Nilai Bruto
-  const [grossInput, setGrossInput] = useState<number>(22_200_000);
+  // 1. Input Nilai Bruto (default 0 / kosong saat pertama kali diakses)
+  const [grossInput, setGrossInput] = useState<number>(0);
 
-  // 2. Pengaturan PPN (default dari config)
-  const [usePPN, setUsePPN] = useState<boolean>(true);
+  // 2. Pengaturan PPN (default nonaktif saat pertama kali diakses)
+  const [usePPN, setUsePPN] = useState<boolean>(false);
   const [ppnMode, setPpnMode] = useState<'include' | 'exclude'>('include');
   const [userSelectedPpnRate, setUserSelectedPpnRate] = useState<number | null>(null);
   const ppnRatePercent = userSelectedPpnRate ?? config.ppnRate ?? 11;
@@ -257,7 +257,7 @@ Dihitung otomatis melalui Kalkulator Pajak RI
                   type="text"
                   value={grossInput === 0 ? '' : grossInput.toLocaleString('id-ID')}
                   onChange={(e) => handleGrossChange(e.target.value)}
-                  placeholder="0"
+                  placeholder="Masukkan Nilai Bruto / Tagihan (misal: 10.000.000)"
                   className="w-full pl-9 pr-3 py-2 text-xs font-mono border border-slate-300 rounded focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none"
                 />
               </div>

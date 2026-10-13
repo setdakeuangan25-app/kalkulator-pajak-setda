@@ -51,7 +51,7 @@ export const PrintManualSlipModal: React.FC<PrintManualSlipModalProps> = ({
   });
 
   const [institutionName, setInstitutionName] = useState<string>(
-    'BAGIAN KEUANGAN / BENDAHARA PENGELUARAN'
+    'SEKRETARIAT DAERAH KOBAR - BENDAHARA PENGELUARAN'
   );
   const [vendorName, setVendorName] = useState<string>('CV / PT Rekanan Penyedia');
   const [transactionPurpose, setTransactionPurpose] = useState<string>(
